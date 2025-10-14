@@ -1,5 +1,5 @@
 jwt:
-  secret: VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHa
+  secret: 88888988****
 spring:
   servlet:
     multipart:
@@ -9,9 +9,9 @@ spring:
     path match:
       matching-strategy: ant_path_matcher
   datasource:
-    url: jdbc:mysql://158.247.194.87:3306/schetalk?autoReconnect=true
+    url: jdbc:mysql://********:3306/schetalk?autoReconnect=true
     username: schetalk
-    password: gkfdkqjwl@1
+    password: 88888888888
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       max-lifetime: 177000
