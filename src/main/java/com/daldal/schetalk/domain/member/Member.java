@@ -20,7 +20,7 @@ public class Member  {
 
     @Column(nullable = false)
     @Schema(description = "회원 아이디", example = "changmin")
-    private String username;
+    private String email;
 
     @Column(nullable = false)
     @Schema(description = "회원 비밀번호", example = "1234")

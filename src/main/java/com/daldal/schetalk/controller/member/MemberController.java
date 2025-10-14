@@ -40,10 +40,10 @@ public class MemberController {
     public ScheTalkApiResponse<Long> join(@RequestBody Map<String,String> user){
 
         //아이디가 중복 됐을때
-        if(memberService.duplicate(user.get("username")) == false){
+        if(memberService.duplicate(user.get("email")) == false){
             return new ScheTalkApiResponse<>(false, "회원가입 실패",1L);
         }else{
-            String username = user.get("username");
+            String username = user.get("email");
             String password = passwordEncoder.encode(user.get("password"));
 
             memberService.join(username,password);
@@ -55,7 +55,7 @@ public class MemberController {
     @PostMapping("/login")
     @Operation(summary = "로그인", description = "username, password로 로그인")
     public ScheTalkApiResponse<Member> login(@RequestBody Map<String,String> user) {
-        Member member = memberService.getMember(user.get("username"))
+        Member member = memberService.getMember(user.get("email"))
                 .orElse(null);
 
         if (member == null) {

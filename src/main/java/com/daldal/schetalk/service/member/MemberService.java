@@ -20,18 +20,18 @@ public class MemberService {
     public Long join(String username,String password){
         return memberRepository.save(
                 Member.builder()
-                        .username(username)
+                        .email(username)
                         .password(password)
                         .build()
         ).getMemberId();
     }
 
-    public boolean duplicate(String username) {
-        return memberRepository.findByUsername(username).isEmpty();
+    public boolean duplicate(String email) {
+        return memberRepository.findByEmail(email).isEmpty();
     }
 
-    public Optional<Member> getMember(String username){
-        return memberRepository.findByUsername(username);
+    public Optional<Member> getMember(String email){
+        return memberRepository.findByEmail(email);
     }
 
 

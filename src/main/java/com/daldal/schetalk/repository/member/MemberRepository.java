@@ -11,11 +11,11 @@ import java.util.Optional;
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
-    Optional<Member> findByUsername(String username);
+    Optional<Member> findByEmail(String username);
 
     @Query(value = "SELECT * \n" +
             "  FROM schetalk.Member\n" +
-            " WHERE username =:username",nativeQuery = true)
-    Optional<Member> duplicateNickName(@Param("username") String nickName);
+            " WHERE email =:email",nativeQuery = true)
+    Optional<Member> duplicateNickName(@Param("email") String email);
 
 }
